@@ -47,7 +47,7 @@ function! NTFinderP()
 endfunction
 
 " Key mapping
-"map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 map <C-n> :call NTFinderP()<CR>
 
 " Config lightline
