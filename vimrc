@@ -13,11 +13,15 @@ Plugin 'itchyny/vim-gitbranch'
 Plugin 'itchyny/lightline.vim'
 Plugin 'google/vim-searchindex'
 Plugin 'wincent/ferret'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
+syntax enable
 filetype plugin indent on
-syntax on
 set cursorline
 let g:gruvbox_contrast_dark="hard"
 autocmd vimenter * ++nested colorscheme gruvbox
@@ -46,8 +50,11 @@ function! NTFinderP()
        endif
 endfunction
 
+" Remove highlight after search
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
 " Key mapping
-map <C-n> :NERDTreeToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
 map <C-n> :call NTFinderP()<CR>
 
 " Config lightline
@@ -76,3 +83,4 @@ set smartindent
 set autoindent
 set hlsearch
 set incsearch
+set encoding=utf-8
